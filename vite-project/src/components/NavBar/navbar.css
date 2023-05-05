@@ -9,10 +9,13 @@
 
 nav{
     display: flex;
-    
+    width: 100%;
+    padding: 1em;
+    align-items: center;
+    justify-content: space-around;    
 }
 
-nav ul img{
+nav div img{
     width: 7em;
     padding: 1em; 
        

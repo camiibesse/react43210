@@ -1,3 +1,8 @@
+.cart-widget img{
+    width: 7em;
+    padding: 1em;
+}
+
 .cart-span{
     color: #f4f4f4
 }

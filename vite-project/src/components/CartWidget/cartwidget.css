@@ -1,8 +1,14 @@
-.cart-widget img{
-    width: 7em;
+.cart-widget{
+    display: flex;
+}
+
+.cart-widget .img-cart{
+    width: 5em;
     padding: 1em;
 }
 
-.cart-span{
-    color: #f4f4f4
+.cart-widget .cart-span{
+    display: contents;
+    color: #f4f4f4;
+    background-color: darkslateblue;
 }

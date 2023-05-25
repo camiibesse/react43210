@@ -1,21 +1,27 @@
 import logo from "../NavBar/assets/logo.png";
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link, NavLink } from "react-router-dom";
+
 function NavBar (){
     return (
-        <nav>
+        <>
+        <nav className="nav-container">
             <div>
-                <img src={logo} alt="Logo" />
+            <Link to="/">
+                <img src={logo} alt="Logo"/>
+            </Link>
             </div>
-            <ul>
-                <button>Playstation 4</button>
-                <button>Playstation 5</button>
-                <button>Accesorios</button>
-            </ul>
             <div>
-            <CartWidget/>
+                <NavLink to="/category/PS4">PlayStation 4 </NavLink>
+                <NavLink to="/category/PS5">PlayStation 5 </NavLink>
+                <NavLink to="/category/accesorios">Accesorios </NavLink>
             </div>
-        </nav>
+            <div>
+            <CartWidget />
+            </div>
+        </nav>        
+        </>        
     )
 }
 

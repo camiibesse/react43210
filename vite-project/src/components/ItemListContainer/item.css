@@ -1,0 +1,34 @@
+.item-card {
+    background-color: #fff;
+    border: solid thin #e1e1e1;
+}
+.item-card img {
+    width: 100%;
+    height: 300px;
+}
+.item-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: snow;
+}
+.item-info h3 {
+    font-size: 1em;
+    color: #05092e;
+    margin-bottom: 15px;
+}
+.item-info small{
+    font-size: 1em;
+    color: #222;
+    margin-bottom: 15px;
+}
+.item-card .precio {
+    display: flex;
+    justify-content:end;
+    font-weight: bolder;
+}
+.precio p {
+    font-size: 1.2em;
+}
+

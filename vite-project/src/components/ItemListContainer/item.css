@@ -20,14 +20,10 @@
 }
 .item-info small{
     font-size: 1em;
-    color: #222;
+    color: #22222294;
     margin-bottom: 15px;
 }
-.item-card .precio {
-    display: flex;
-    justify-content:end;
-    font-weight: bolder;
-}
+
 .precio p {
     font-size: 1.2em;
 }

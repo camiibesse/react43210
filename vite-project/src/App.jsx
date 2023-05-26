@@ -1,6 +1,5 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainerSearch from "./components/ItemListContainer/ItemListContainerSearch";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -11,7 +10,7 @@ function App() {
     <BrowserRouter>
       <NavBar /> 
       <Routes>
-        <Route path="/" element={<ItemListContainerSearch />} />
+        <Route path="/" element={<ItemListContainer />} />
         <Route path='/category/:categoryId' element={<ItemListContainer />} />
         <Route path="/:productId" element={<ItemDetailContainer />} />
         <Route path="*" element={<h4>Erro 404: Page not found</h4>} />

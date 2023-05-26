@@ -1,27 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import listaJuegos from "../../data/juegos";
+import { getProductById } from "../../data/juegos";
 import ItemCount from "../ItemListContainer/ItemCount";
 
-
-function getItemData(idURL){
-  return new Promise((resolve) => {
-      setTimeout(()=>{
-        const requestedItem = listaJuegos.find((item) => item.id === Number(idURL))
-        resolve(requestedItem)
-      },500);        
-  })
-}
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState({})
   const id = useParams().id;
+  const { productId } = useParams()
 
   useEffect(() => {
-      getItemData(id).then((respuesta) => {
-        setProduct(respuesta)
-      });
-    },[id]); 
+
+    getProductById(productId)
+      .then((response) => {
+        setProduct(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [productId])
+
 
   return (
     <div>
@@ -40,4 +38,4 @@ function ItemDetailContainer() {
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

@@ -153,7 +153,7 @@ const products = [
     },
     {
         id: 20,
-        title: "Joystick Sony Dualshock 4 Blue",
+        title: "Sony Dualshock 4 Blue",
         category: "accesorios",
         img: "/src/assets/jostyck1.jpg",
         price: 27900,

@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
-import listaJuegos from "../../data/juegos";
 import ItemList from "./ItemList";
 import "./itemcontainer.css";
 
-function getData(){
-    return new Promise((resolve) => {
-        setTimeout(()=>{resolve(listaJuegos)
-        },500);        
-    })
-}
 
 function withSearch (OrigComponent){
     

@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import listaJuegos from "../../data/juegos";
+import { getProducts, getProductsByCategory } from '../../data/juegos';
 import ItemList from "./ItemList";
 import "./itemcontainer.css";
-
-function getData(){
-    return new Promise((resolve) => {
-        setTimeout(()=>{resolve(listaJuegos)
-        },500);        
-    })
-}
+import { useParams } from "react-router-dom";
 
 function ItemListContainer () {
-    let [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
+    const { categoryId } = useParams();
+
     useEffect(()=>{
-        getData().then((respuesta) => {
-            setProducts(respuesta);
-        });
-        },[]);
+        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+        asyncFunc(categoryId)
+        .then((response) => {
+          setProducts(response)
+        })
+        .catch((error) => {
+            console.log(error)
+          })
+      }, [categoryId])
+    
 
         return (<ItemList products={products} />)
     }

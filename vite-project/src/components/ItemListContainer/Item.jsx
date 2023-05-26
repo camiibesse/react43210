@@ -3,6 +3,7 @@ import "./item.css";
 
 function Item({title,category,img,price,id,stock}) {
   return (
+    
     <div className="group relative">
         <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img 
@@ -18,10 +19,12 @@ function Item({title,category,img,price,id,stock}) {
           <p className="text-sm font-medium text-gray-900"> $ {price}</p>
           <p>Stock disponible: {stock}</p>
         </div>
-          <Link to={`/Item.jsx/${id}`}> Ver detalle </Link>
-        </div>
-        
+        <Link to={`/product/${id}`}>
+          <button className="option">Ver detalle</button>
+        </Link >
+        </div>   
     </div>
+    
   )
 }
 

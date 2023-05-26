@@ -33,10 +33,14 @@ function withSearch (OrigComponent){
             } 
         }
         return (
-            <div className="flex flex-col">
-            <input onChange={handleChange} className="border-solid border-b-4 border-indigo-500 p-2 ml-8" placeholder="Buscar producto..."></input>
+            <>
+            <form className="flex justify-center">
+                <label htmlFor="search-input" className="" >
+                    <input onChange={handleChange} className="border-solid border-b-4 border-indigo-500 p-2 ml-8" placeholder="Buscar producto..." />
+                </label>
+            </form>
             <OrigComponent filterList={filterList} />
-            </div>
+            </>
         )
     }
     return WrappedComponent;

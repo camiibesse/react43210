@@ -1,4 +1,4 @@
-const listaJuegos = [
+const products = [
     {
         id: 1,
         title: "Fifa 2023",
@@ -126,8 +126,81 @@ const listaJuegos = [
         img: "/src/assets/Returnal.jpg",
         price: 9999,
         stock: 5,
-    }
+    },
+    {
+        id: 17,
+        title: "Fifa 23",
+        category: "PS5",
+        img: "/src/assets/fifa2023ps5.jpg",
+        price: 28520,
+        stock: 11,
+    },
+    {
+        id: 18,
+        title: "Ghost",
+        category: "PS5",
+        img: "/src/assets/ghost.jpg",
+        price: 22999,
+        stock: 6,
+    },
+    {
+        id: 19,
+        title: "Gran Turismo",
+        category: "PS5",
+        img: "/src/assets/gt.jpg",
+        price: 7439,
+        stock: 6,
+    },
+    {
+        id: 20,
+        title: "Joystick Sony Dualshock 4 Blue",
+        category: "accesorios",
+        img: "/src/assets/jostyck1.jpg",
+        price: 27900,
+        stock: 6,
+    },
+    {
+        id: 21,
+        title: "Base Cargadora Doble 2 Joystick P/ps5",
+        category: "accesorios",
+        img: "/src/assets/cargador.jpg",
+        price: 7030,
+        stock: 6,
+    },
+    {
+        id: 22,
+        title: "Auriculares Gaming c/ Microfono",
+        category: "accesorios",
+        img: "/src/assets/auricular.jpg",
+        price: 3699,
+        stock: 6,
+    },
+
 
 ]
 
-export default listaJuegos; 
+const DELAY = 500;
+
+export const getProducts = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products)
+    }, DELAY)
+  })
+}
+
+export const getProductById = (id) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products.find(prod => prod.id === id))
+    }, DELAY)
+  })
+}
+
+export const getProductsByCategory = (category) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products.filter(prod => prod.category === category))
+    }, DELAY)
+  })
+}
